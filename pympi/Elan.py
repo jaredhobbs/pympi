@@ -1496,7 +1496,7 @@ def parse_eaf(file_path, eaf_obj, suppress_version_warning=False):
     # Annotation document
     try:
         # py3.5 compat: etree.parse does not support pathlib.Path objects in py3.5.
-        tree_root = etree.parse(str(file_path)).getroot()
+        tree_root = etree.parse(file_path).getroot()
     except etree.ParseError:
         raise Exception('Unable to parse eaf, can you open it in ELAN?')
 
